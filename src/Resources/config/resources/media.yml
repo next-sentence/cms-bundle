@@ -1,0 +1,14 @@
+sylius_resource:
+    resources:
+        lwc_cms.media:
+            driver: doctrine/orm
+            classes:
+                model: Lwc\CmsBundle\Entity\Media
+                interface: Lwc\CmsBundle\Entity\MediaInterface
+                form: Lwc\CmsBundle\Form\Type\MediaType
+                repository: Lwc\CmsBundle\Repository\MediaRepository
+                controller: Lwc\CmsBundle\Controller\MediaController
+            translation:
+                classes:
+                    model: Lwc\CmsBundle\Entity\MediaTranslation
+                    interface: Lwc\CmsBundle\Entity\MediaTranslationInterface

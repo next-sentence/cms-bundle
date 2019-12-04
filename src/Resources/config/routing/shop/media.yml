@@ -1,0 +1,41 @@
+lwc_cms_shop_media_render:
+    path: /media/{code}
+    methods: [GET]
+    defaults:
+        _controller: lwc_cms.controller.media:renderMediaAction
+        _sylius:
+            repository:
+                method: findOneByCode
+                arguments:
+                    - $code
+
+lwc_cms_shop_media_render_template:
+    path: /media-template/{code}
+    methods: [GET]
+    defaults:
+        _controller: lwc_cms.controller.media:showAction
+        _sylius:
+            template: $template
+            repository:
+                method: findOneEnabledByCode
+                arguments:
+                - $code
+
+lwc_cms_shop_media_download:
+    path: /media/download/{code}
+    methods: [GET]
+    defaults:
+        _controller: lwc_cms.controller.media:downloadMediaAction
+
+lwc_cms_shop_media_index_by_section_code:
+    path: /media/section/{sectionCode}
+    methods: [GET]
+    defaults:
+        _controller: lwc_cms.controller.media:indexAction
+        _sylius:
+            template: $template
+            repository:
+                method: findBySectionCode
+                arguments:
+                    - $sectionCode
+

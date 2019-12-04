@@ -1,0 +1,18 @@
+Lwc\CmsBundle\Entity\FrequentlyAskedQuestionTranslation:
+    properties:
+        question:
+            - NotBlank:
+                message: 'lwc_cms.frequently_asked_question.question.not_blank'
+                groups: ['Lwc']
+            - Length:
+                min: 2
+                minMessage: 'lwc_cms.frequently_asked_question.question.min_length'
+                groups: ['Lwc']
+        answer:
+            - NotBlank:
+                message: 'lwc_cms.frequently_asked_question.answer.not_blank'
+                groups: ['Lwc']
+            - Length:
+                min: 2
+                minMessage: 'lwc_cms.frequently_asked_question.answer.min_length'
+                groups: ['Lwc']

@@ -1,0 +1,4 @@
+suites:
+    main:
+        namespace: Lwc\CmsBundle
+        psr4_prefix: Lwc\CmsBundle

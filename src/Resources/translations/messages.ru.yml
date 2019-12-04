@@ -1,0 +1,54 @@
+lwc_cms:
+    ui:
+        blocks: Блоки
+        pages: Страницы
+        content_management: Наполнение
+        cms: Управление наполнением
+        enabled: Вкл
+        blocks_header: Блоки
+        blocks_subheader: Управление блоками
+        pages_header: Страницы
+        pages_subheader: Управление страницами
+        products: Товары
+        page_related_products: Cопутствующие товары
+        name: Имя
+        slug: Путь
+        meta_keywords: Ключевые слова (мета)
+        meta_description: Описание (мета)
+        content: Содержимое
+        faq: FAQ
+        code: Код
+        contents: Содержит
+        images: Изображения
+        image: Изображение
+        link: Ссылка
+        faq_header: FAQ
+        faq_subheader: Управление часто задаваемыми вопросами
+        frequently_asked_questions: Часто задаваемые вопросы
+        question: Вопрос
+        answer: Ответ
+        sections: Разделы
+        sections_header: Разделы
+        sections_subheader: Управление разделами
+        position: Позиция
+        channels: Каналы
+        preview: Предпросмотр
+        download: Загрузить
+        name_when_linked: Название в списке
+        description_when_linked: Описание в списке
+        media: Медиа
+        media_header: Медиа
+        media_subheader: Управление цифровым контентом
+        type: Тип
+        file: Файл
+        alt: Альт
+        description: Описание
+        file_provider: Файл
+        image_provider: Изображение
+        video_provider: Видео
+        read_more: Подробнее
+        breadcrumb: Хлебные крошки
+        import: Импорт
+        csv_file: CSV файл
+        successfully_imported: Данные успешно импортированы
+        title: заглавие

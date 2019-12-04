@@ -1,0 +1,18 @@
+{% form_theme form '@LwcCmsBundle/Form/theme.html.twig' %}
+<div class="Lwc-cms-import ">
+    <form method="POST" enctype="multipart/form-data" action="{{ path('lwc_cms_admin_import_data', {'resourceName': app.request.get('resourceName')}) }}" novalidate="novalidate" class="ui form">
+
+        <div class="ui action input">
+            <input type="text" placeholder="{{ 'lwc_cms.ui.csv_file'|trans }}" readonly>
+
+            {{ form_widget(form.file) }}
+
+            <button class="ui teal left labeled icon button">
+                <i class="upload icon"></i>
+                {{ 'lwc_cms.ui.import'|trans }}
+            </button>
+        </div>
+
+        {{ form_widget(form._token) }}
+    </form>
+</div>

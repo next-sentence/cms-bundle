@@ -1,0 +1,42 @@
+sylius_grid:
+    grids:
+        lwc_cms_admin_media:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%lwc_cms.model.media.class%"
+                    repository:
+                        method: createListQueryBuilder
+            sorting:
+                code: asc
+            limits: [10, 25, 50]
+            fields:
+                code:
+                    type: string
+                    label: lwc_cms.ui.code
+                    sortable: ~
+                path:
+                    type: string
+                    label: lwc_cms.ui.name
+                type:
+                    type: string
+                    label: lwc_cms.ui.type
+            filters:
+                search:
+                    type: string
+                    label: sylius.ui.search
+                    options:
+                        fields: [code, type]
+            actions:
+                main:
+                    import:
+                        type: import
+                        options:
+                            resourceCode: media
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete

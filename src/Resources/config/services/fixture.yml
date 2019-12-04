@@ -1,0 +1,77 @@
+services:
+    lwc_cms.fixture.block:
+        class: Lwc\CmsBundle\Fixture\BlockFixture
+        arguments:
+            - "@lwc_cms.fixture.factory.block"
+        tags:
+            - { name: sylius_fixtures.fixture }
+
+    lwc_cms.fixture.page:
+        class: Lwc\CmsBundle\Fixture\PageFixture
+        arguments:
+            - "@lwc_cms.fixture.factory.page"
+        tags:
+            - { name: sylius_fixtures.fixture }
+
+    lwc_cms.fixture.frequently_asked_question:
+        class: Lwc\CmsBundle\Fixture\FrequentlyAskedQuestionFixture
+        arguments:
+            - "@lwc_cms.fixture.factory.frequently_asked_question"
+        tags:
+            - { name: sylius_fixtures.fixture }
+
+    lwc_cms.fixture.section:
+        class: Lwc\CmsBundle\Fixture\SectionFixture
+        arguments:
+            - "@lwc_cms.fixture.factory.section"
+        tags:
+            - { name: sylius_fixtures.fixture }
+
+    lwc_cms.fixture.media:
+        class: Lwc\CmsBundle\Fixture\MediaFixture
+        arguments:
+            - "@lwc_cms.fixture.factory.media"
+        tags:
+            - { name: sylius_fixtures.fixture }
+
+    lwc_cms.fixture.factory.block:
+        class: Lwc\CmsBundle\Fixture\Factory\BlockFixtureFactory
+        arguments:
+            - "@lwc_cms.factory.block"
+            - "@lwc_cms.factory.block_translation"
+            - "@lwc_cms.repository.block"
+            - "@sylius.context.locale"
+            - "@lwc_cms.assigner.sections"
+
+    lwc_cms.fixture.factory.page:
+        class: Lwc\CmsBundle\Fixture\Factory\PageFixtureFactory
+        arguments:
+            - "@lwc_cms.factory.page"
+            - "@lwc_cms.factory.page_translation"
+            - "@lwc_cms.repository.page"
+            - "@lwc_cms.image_uploader"
+            - "@lwc_cms.assigner.sections"
+            - "@sylius.context.locale"
+
+    lwc_cms.fixture.factory.frequently_asked_question:
+        class: Lwc\CmsBundle\Fixture\Factory\FrequentlyAskedQuestionFixtureFactory
+        arguments:
+            - "@lwc_cms.factory.frequently_asked_question"
+            - "@lwc_cms.factory.frequently_asked_question_translation"
+            - "@lwc_cms.repository.frequently_asked_question"
+
+    lwc_cms.fixture.factory.section:
+        class: Lwc\CmsBundle\Fixture\Factory\SectionFixtureFactory
+        arguments:
+            - "@lwc_cms.factory.section"
+            - "@lwc_cms.factory.section_translation"
+            - "@lwc_cms.repository.section"
+
+    lwc_cms.fixture.factory.media:
+        class: Lwc\CmsBundle\Fixture\Factory\MediaFixtureFactory
+        arguments:
+            - "@lwc_cms.factory.media"
+            - "@lwc_cms.factory.media_translation"
+            - "@lwc_cms.resolver.media_provider"
+            - "@lwc_cms.repository.media"
+            - "@lwc_cms.assigner.sections"

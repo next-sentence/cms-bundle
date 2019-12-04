@@ -1,0 +1,32 @@
+services:
+    lwc_cms.controller.page_slug:
+        class: Lwc\CmsBundle\Controller\PageSlugController
+        public: true
+        arguments:
+            - "@sylius.generator.slug"
+
+    lwc_cms.controller.action.admin.import_data:
+        class: Lwc\CmsBundle\Controller\Action\Admin\ImportDataAction
+        public: true
+        arguments:
+            - "@lwc_cms.processor.import"
+            - "@form.factory"
+            - "@session.flash_bag"
+            - "@lwc_cms.controller.helper.form_errors_flash"
+            - "@translator"
+            - "@fos_rest.view_handler.default"
+
+    lwc_cms.controller.action.admin.upload_editor_image:
+        class: Lwc\CmsBundle\Controller\Action\Admin\UploadEditorImageAction
+        public: true
+        arguments:
+            - "@lwc_cms.resolver.media_provider"
+            - "@lwc_cms.repository.media"
+            - "@lwc_cms.factory.media"
+
+    lwc_cms.controller.helper.form_errors_flash:
+        class: Lwc\CmsBundle\Controller\Helper\FormErrorsFlashHelper
+        public: true
+        arguments:
+            - "@session.flash_bag"
+            - "@translator"

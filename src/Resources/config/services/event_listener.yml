@@ -1,0 +1,21 @@
+services:
+    lwc_cms.menu.content_management:
+        class: Lwc\CmsBundle\Menu\ContentManagementMenuBuilder
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.main, method: buildMenu }
+
+    lwc_cms.event_listener.page_image_upload:
+        class: Lwc\CmsBundle\EventListener\PageImageUploadListener
+        arguments:
+            - "@lwc_cms.image_uploader"
+        tags:
+            - { name: kernel.event_listener, event: lwc_cms.page.pre_create, method: uploadImage }
+            - { name: kernel.event_listener, event: lwc_cms.page.pre_update, method: uploadImage }
+
+    lwc_cms.event_listener.media_upload:
+        class: Lwc\CmsBundle\EventListener\MediaUploadListener
+        arguments:
+            - "@lwc_cms.resolver.media_provider"
+        tags:
+            - { name: kernel.event_listener, event: lwc_cms.media.pre_create, method: uploadMedia }
+            - { name: kernel.event_listener, event: lwc_cms.media.pre_update, method: uploadMedia }

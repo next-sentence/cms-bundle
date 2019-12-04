@@ -1,0 +1,18 @@
+sylius_grid:
+    grids:
+        lwc_cms_shop_page:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%lwc_cms.model.page.class%"
+                    repository:
+                        method: createShopListQueryBuilder
+                        arguments:
+                            sectionCode: $sectionCode
+            sorting:
+                createdAt: desc
+            fields:
+                createdAt:
+                    type: datetime
+                    sortable: ~
+            limits: [10]

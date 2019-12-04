@@ -1,0 +1,44 @@
+Lwc\CmsBundle\Entity\Media:
+    type: mappedSuperclass
+    table: lwc_cms_media
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        code:
+            column: code
+            type: string
+            length: 250
+            unique: true
+        type:
+            column: type
+            type: string
+            length: 250
+        path:
+            column: path
+            type: string
+            length: 250
+            unique: true
+        mimeType:
+            column: mime_type
+            type: string
+            length: 250
+            nullable: true
+        enabled:
+            column: enabled
+            type: boolean
+    manyToMany:
+        sections:
+            targetEntity: Lwc\CmsBundle\Entity\SectionInterface
+            joinTable:
+                name: lwc_cms_media_sections
+                joinColumns:
+                    media_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    section_id:
+                        referencedColumnName: id
+                        onDelete: CASCADE

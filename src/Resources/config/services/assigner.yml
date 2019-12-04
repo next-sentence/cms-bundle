@@ -1,0 +1,5 @@
+services:
+    lwc_cms.assigner.sections:
+        class: Lwc\CmsBundle\Assigner\SectionsAssigner
+        arguments:
+            - "@lwc_cms.repository.section"

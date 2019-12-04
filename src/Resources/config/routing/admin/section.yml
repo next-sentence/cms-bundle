@@ -1,0 +1,46 @@
+lwc_cms_admin_section:
+    resource: |
+        alias: lwc_cms.section
+        section: admin
+        templates: SyliusAdminBundle:Crud
+        redirect: update
+        grid: lwc_cms_admin_section
+        except: ['show']
+        permission: true
+        vars:
+            all:
+                header: lwc_cms.ui.sections_header
+                subheader: lwc_cms.ui.sections_subheader
+                templates:
+                    form: "@LwcCmsBundle/Section/Crud/_form.html.twig"
+            index:
+                icon: grid layout
+    type: sylius.resource
+
+lwc_cms_admin_ajax_section_by_name_phrase:
+    path: /ajax/sections/search
+    methods: [GET]
+    defaults:
+        _format: json
+        _controller: lwc_cms.controller.section:indexAction
+        _sylius:
+            serialization_groups: [Autocomplete]
+            permission: true
+            repository:
+                method: findByNamePart
+                arguments:
+                    phrase: $phrase
+                    locale: null
+
+lwc_cms_admin_ajax_section_by_code:
+    path: /ajax/sections/code
+    methods: [GET]
+    defaults:
+        _format: json
+        _controller: lwc_cms.controller.section:indexAction
+        _sylius:
+            serialization_groups: [Autocomplete]
+            permission: true
+            repository:
+                method: findBy
+                arguments: [code: $code]

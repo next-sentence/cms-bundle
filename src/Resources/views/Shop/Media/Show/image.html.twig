@@ -1,0 +1,5 @@
+<h2>{{ media.name|raw }}</h2>
+
+<img class="ui fluid image" src="{{ media.path }}" alt="{{ media.name }}"/>
+
+<p>{{ lwc_cms_render_content(media) }}</p>

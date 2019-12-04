@@ -1,0 +1,15 @@
+Lwc\CmsBundle\Entity\Section:
+    type: mappedSuperclass
+    table: lwc_cms_section
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        code:
+            column: code
+            type: string
+            length: 250
+            unique: true

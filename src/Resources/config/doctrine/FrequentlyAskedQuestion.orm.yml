@@ -1,0 +1,23 @@
+Lwc\CmsBundle\Entity\FrequentlyAskedQuestion:
+    type: mappedSuperclass
+    table: lwc_cms_faq
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        code:
+            column: code
+            type: string
+            nullable: false
+        position:
+            column: position
+            type: integer
+            nullable: false
+        enabled:
+            column: enabled
+            type: boolean
+            nullable: false
+

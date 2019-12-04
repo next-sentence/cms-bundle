@@ -1,0 +1,13 @@
+sylius_resource:
+    resources:
+        lwc_cms.frequently_asked_question:
+            driver: doctrine/orm
+            classes:
+                model: Lwc\CmsBundle\Entity\FrequentlyAskedQuestion
+                interface: Lwc\CmsBundle\Entity\FrequentlyAskedQuestionInterface
+                form: Lwc\CmsBundle\Form\Type\FrequentlyAskedQuestionType
+                repository: Lwc\CmsBundle\Repository\FrequentlyAskedQuestionRepository
+            translation:
+                classes:
+                    model: Lwc\CmsBundle\Entity\FrequentlyAskedQuestionTranslation
+                    interface: Lwc\CmsBundle\Entity\FrequentlyAskedQuestionTranslationInterface

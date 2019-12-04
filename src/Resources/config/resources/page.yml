@@ -1,0 +1,21 @@
+sylius_resource:
+    resources:
+        lwc_cms.page:
+            driver: doctrine/orm
+            classes:
+                model: Lwc\CmsBundle\Entity\Page
+                interface: Lwc\CmsBundle\Entity\PageInterface
+                form: Lwc\CmsBundle\Form\Type\PageType
+                repository: Lwc\CmsBundle\Repository\PageRepository
+                controller: Lwc\CmsBundle\Controller\PageController
+            translation:
+                classes:
+                    model: Lwc\CmsBundle\Entity\PageTranslation
+                    interface: Lwc\CmsBundle\Entity\PageTranslationInterface
+                    
+        lwc_cms.page_image:
+            driver: doctrine/orm
+            classes:
+                model: Lwc\CmsBundle\Entity\PageImage
+                interface: Lwc\CmsBundle\Entity\PageImageInterface
+                form: Lwc\CmsBundle\Form\Type\PageImageType

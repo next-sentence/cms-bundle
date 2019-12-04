@@ -1,0 +1,24 @@
+Lwc\CmsBundle\Entity\Media:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [code]
+            groups: ['Lwc']
+            message: 'lwc_cms.media.code.unique'
+    properties:
+        code:
+            - NotBlank:
+                message: 'lwc_cms.media.code.not_blank'
+                groups: ['Lwc']
+            - Length:
+                min: 2
+                max: 250
+                minMessage: 'lwc_cms.media.code.min_length'
+                maxMessage: 'lwc_cms.media.code.max_length'
+                groups: ['Lwc']
+        file:
+            - Expression:
+                expression: '!(this.getPath() == null and this.getFile() == null)'
+                message: 'lwc_cms.media.file.not_blank'
+                groups: ['Lwc']
+        translations:
+            - Valid: ~

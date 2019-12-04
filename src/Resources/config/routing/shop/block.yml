@@ -1,0 +1,24 @@
+lwc_cms_shop_block_render:
+    path: /block/{code}
+    methods: [GET]
+    defaults:
+        _controller: lwc_cms.controller.block:renderBlockAction
+        _sylius:
+            repository:
+                method: findOneByCode
+                arguments:
+                    - $code
+
+lwc_cms_shop_block_index_by_section_code:
+    path: /blocks/section/{sectionCode}
+    methods: [GET]
+    defaults:
+        _controller: lwc_cms.controller.block:indexAction
+        _sylius:
+            template: $template
+            repository:
+                method: findBySectionCode
+                arguments:
+                    - $sectionCode
+                    - "expr:service('sylius.context.locale').getLocaleCode()"
+

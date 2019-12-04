@@ -1,0 +1,50 @@
+Lwc\CmsBundle\Entity\PageTranslation:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [slug, locale]
+            errorPath: slug
+            groups: [Lwc]
+            message: lwc_cms.page.slug.unique
+    properties:
+        name:
+            - NotBlank:
+                message: lwc_cms.page.name.not_blank
+                groups: [Lwc]
+            - Length:
+                min: 2
+                max: 250
+                minMessage: lwc_cms.page.name.min_length
+                maxMessage: lwc_cms.page.name.max_length
+                groups: [Lwc]
+        slug:
+            - NotBlank:
+                message: lwc_cms.page.slug.not_blank
+                groups: [Lwc]
+            - Length:
+                min: 2
+                max: 250
+                minMessage: lwc_cms.page.slug.min_length
+                maxMessage: lwc_cms.page.slug.max_length
+                groups: [Lwc]
+        metaKeywords:
+            - Length:
+                min: 2
+                max: 1000
+                minMessage: lwc_cms.page.meta_keywords.min_length
+                maxMessage: lwc_cms.page.meta_keywords.max_length
+                groups: [Lwc]
+        metaDescription:
+            - Length:
+                min: 2
+                max: 5000
+                minMessage: lwc_cms.page.meta_description.min_length
+                maxMessage: lwc_cms.page.meta_description.max_length
+                groups: [Lwc]
+        content:
+            - NotBlank:
+                message: lwc_cms.page.content.not_blank
+                groups: [Lwc]
+            - Length:
+                min: 2
+                minMessage: lwc_cms.page.content.min_length
+                groups: [Lwc]

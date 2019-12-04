@@ -1,0 +1,34 @@
+lwc_cms_admin_block:
+    resource: "@LwcCmsBundle/Resources/config/routing/admin/block.yml"
+
+lwc_cms_admin_page:
+    resource: "@LwcCmsBundle/Resources/config/routing/admin/page.yml"
+
+lwc_cms_admin_frequently_asked_question:
+    resource: "@LwcCmsBundle/Resources/config/routing/admin/frequently_asked_question.yml"
+
+lwc_cms_admin_section:
+    resource: "@LwcCmsBundle/Resources/config/routing/admin/section.yml"
+
+lwc_cms_admin_media:
+    resource: "@LwcCmsBundle/Resources/config/routing/admin/media.yml"
+
+lwc_cms_admin_locale:
+    resource: "@LwcCmsBundle/Resources/config/routing/admin/locale.yml"
+
+lwc_cms_admin_ajax_generate_page_slug:
+    path: /page/generate-slug
+    methods: [GET]
+    defaults:
+        _controller: lwc_cms.controller.page_slug:generateAction
+
+lwc_cms_admin_import_data:
+    path: /import/{resourceName}
+    methods: [GET, POST]
+    defaults:
+        _controller: lwc_cms.controller.action.admin.import_data
+
+lwc_cms_admin_upload_editor_image:
+    path: /editor/upload-image
+    defaults:
+        _controller: lwc_cms.controller.action.admin.upload_editor_image

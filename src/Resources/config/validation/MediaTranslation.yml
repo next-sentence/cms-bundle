@@ -1,0 +1,29 @@
+Lwc\CmsBundle\Entity\MediaTranslation:
+    properties:
+        name:
+            - Length:
+                min: 2
+                max: 250
+                minMessage: lwc_cms.media.name.min_length
+                maxMessage: lwc_cms.media.name.max_length
+                groups: [Lwc]
+        alt:
+            - Length:
+                min: 2
+                max: 250
+                minMessage: lwc_cms.media.alt.min_length
+                maxMessage: lwc_cms.media.alt.max_length
+                groups: [Lwc]
+        link:
+            - Length:
+                min: 2
+                max: 250
+                minMessage: lwc_cms.media.link.min_length
+                maxMessage: lwc_cms.media.link.max_length
+                groups: [Lwc]
+        content:
+            - Length:
+                min: 2
+                minMessage: lwc_cms.media.content.min_length
+                maxMessage: lwc_cms.media.content.max_length
+                groups: [Lwc]

@@ -1,0 +1,35 @@
+parameters:
+    lwc_cms.twig.admin_functions:
+        - lwc_cms_render_block
+        - lwc_cms_render_media
+
+services:
+    lwc_cms.twig.extension.block:
+        class: Lwc\CmsBundle\Twig\Extension\RenderBlockExtension
+        arguments:
+            - "@lwc_cms.repository.block"
+            - "@lwc_cms.resolver.block_resource"
+            - "@templating"
+        tags:
+            - { name: twig.extension }
+
+    lwc_cms.twig.extension.media:
+        class: Lwc\CmsBundle\Twig\Extension\RenderMediaExtension
+        arguments:
+            - "@lwc_cms.resolver.media_provider"
+            - "@lwc_cms.resolver.media_resource"
+        tags:
+            - { name: twig.extension }
+
+    lwc_cms.twig.extension.render_content:
+        class: Lwc\CmsBundle\Twig\Extension\RenderContentExtension
+        arguments:
+            - "@lwc_cms.twig.parser.content"
+        tags:
+            - { name: twig.extension }
+
+    lwc_cms.twig.parser.content:
+        class: Lwc\CmsBundle\Twig\Parser\ContentParser
+        arguments:
+            - "@twig"
+            - "%lwc_cms.twig.admin_functions%"

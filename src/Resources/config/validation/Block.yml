@@ -1,0 +1,19 @@
+Lwc\CmsBundle\Entity\Block:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [code]
+            groups: ['Lwc']
+            message: 'lwc_cms.block.code.unique'
+    properties:
+        code:
+            - NotBlank:
+                message: 'lwc_cms.block.code.not_blank'
+                groups: ['Lwc']
+            - Length:
+                min: 2
+                max: 250
+                minMessage: 'lwc_cms.block.code.min_length'
+                maxMessage: 'lwc_cms.block.code.max_length'
+                groups: ['Lwc']
+        translations:
+            - Valid: ~

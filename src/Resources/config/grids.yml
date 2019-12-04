@@ -1,0 +1,8 @@
+imports:
+    - { resource: "@LwcCmsBundle/Resources/config/grids/admin.yml" }
+    - { resource: "@LwcCmsBundle/Resources/config/grids/shop.yml" }
+
+sylius_grid:
+    templates:
+        action:
+            import: "@LwcCmsBundle/Grid/Action/import.html.twig"

@@ -1,0 +1,14 @@
+sylius_resource:
+    resources:
+        lwc_cms.block:
+            driver: doctrine/orm
+            classes:
+                model: Lwc\CmsBundle\Entity\Block
+                interface: Lwc\CmsBundle\Entity\BlockInterface
+                form: Lwc\CmsBundle\Form\Type\BlockType
+                repository: Lwc\CmsBundle\Repository\BlockRepository
+                controller: Lwc\CmsBundle\Controller\BlockController
+            translation:
+                classes:
+                    model: Lwc\CmsBundle\Entity\BlockTranslation
+                    interface: Lwc\CmsBundle\Entity\BlockTranslationInterface

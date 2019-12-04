@@ -1,0 +1,25 @@
+Lwc\CmsBundle\Entity\FrequentlyAskedQuestion:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [position]
+            message: 'lwc_cms.frequently_asked_question.position.unique'
+            groups: ['Lwc']
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [code]
+            message: 'lwc_cms.frequently_asked_question.code.unique'
+            groups: ['Lwc']
+    properties:
+        code:
+            - NotBlank:
+                message: 'lwc_cms.frequently_asked_question.code.not_blank'
+                groups: ['Lwc']
+            - Length:
+                min: 2
+                minMessage: 'lwc_cms.frequently_asked_question.code.min_length'
+                groups: ['Lwc']
+        position:
+            - NotBlank:
+                message: 'lwc_cms.frequently_asked_question.position.not_blank'
+                groups: ['Lwc']
+        translations:
+            - Valid: ~

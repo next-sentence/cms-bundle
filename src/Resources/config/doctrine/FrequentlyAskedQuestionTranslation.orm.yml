@@ -1,0 +1,18 @@
+Lwc\CmsBundle\Entity\FrequentlyAskedQuestionTranslation:
+    type: mappedSuperclass
+    table: lwc_cms_faq_translation
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        question:
+            column: question
+            type: text
+            nullable: false
+        answer:
+            column: answer
+            type: text
+            nullable: false

@@ -1,0 +1,21 @@
+Lwc\CmsBundle\Entity\BlockTranslation:
+    properties:
+        name:
+            - Length:
+                min: 2
+                max: 250
+                minMessage: lwc_cms.block.name.min_length
+                maxMessage: lwc_cms.block.name.max_length
+                groups: ['Lwc']
+        link:
+            - Length:
+                min: 2
+                max: 250
+                minMessage: lwc_cms.block.link.min_length
+                maxMessage: lwc_cms.block.link.max_length
+                groups: ['Lwc']
+        content:
+            - Length:
+                min: 2
+                minMessage: lwc_cms.block.content.min_length
+                groups: ['Lwc']

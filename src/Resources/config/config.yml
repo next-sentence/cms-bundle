@@ -1,0 +1,24 @@
+imports:
+    - { resource: "@LwcCmsBundle/Resources/config/resources.yml" }
+    - { resource: "@LwcCmsBundle/Resources/config/grids.yml" }
+    - { resource: "@LwcCmsBundle/Resources/config/services.yml" }
+
+parameters:
+    lwc_cms.uploader.filesystem: lwc_cms_media
+
+jms_serializer:
+    metadata:
+        directories:
+            Lwc-section:
+                namespace_prefix: "Lwc\\CmsBundle"
+                path: "@LwcCmsBundle/Resources/config/serializer"
+
+knp_gaufrette:
+    adapters:
+        lwc_cms_media:
+            local:
+                directory: "%sylius_core.public_dir%"
+                create: true
+    filesystems:
+        lwc_cms_media:
+            adapter: "%lwc_cms.uploader.filesystem%"

@@ -1,0 +1,39 @@
+services:
+    lwc_cms.importer.chain:
+        class: Lwc\CmsBundle\Importer\ImporterChain
+
+    lwc_cms.importer.page:
+        class: Lwc\CmsBundle\Importer\PageImporter
+        arguments:
+            - "@lwc_cms.resolver.resource.page"
+            - "@lwc_cms.resolver.resource.section"
+            - "@sylius.context.locale"
+            - "@lwc_cms.downloader.image"
+            - "@lwc_cms.image_uploader"
+            - "@lwc_cms.resolver.importer_sections"
+            - "@validator"
+            - "@doctrine.orm.entity_manager"
+        tags:
+            - { name: Lwc.cmsplugin.importer }
+
+    lwc_cms.importer.block:
+        class: Lwc\CmsBundle\Importer\BlockImporter
+        arguments:
+            - "@lwc_cms.resolver.resource.block"
+            - "@sylius.context.locale"
+            - "@lwc_cms.resolver.importer_sections"
+            - "@validator"
+            - "@doctrine.orm.entity_manager"
+        tags:
+            - { name: Lwc.cmsplugin.importer }
+
+    lwc_cms.importer.media:
+        class: Lwc\CmsBundle\Importer\MediaImporter
+        arguments:
+            - "@lwc_cms.resolver.resource.media"
+            - "@sylius.context.locale"
+            - "@lwc_cms.resolver.importer_sections"
+            - "@validator"
+            - "@doctrine.orm.entity_manager"
+        tags:
+            - { name: Lwc.cmsplugin.importer }

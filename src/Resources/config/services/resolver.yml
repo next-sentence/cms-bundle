@@ -1,0 +1,64 @@
+services:
+    lwc_cms.resolver.resource.page:
+        class: Lwc\CmsBundle\Resolver\ResourceResolver
+        arguments:
+            - "@lwc_cms.repository.page"
+            - "@lwc_cms.factory.page"
+            - "code"
+
+    lwc_cms.resolver.resource.section:
+        class: Lwc\CmsBundle\Resolver\ResourceResolver
+        arguments:
+            - "@lwc_cms.repository.section"
+            - "@lwc_cms.factory.section"
+            - "code"
+
+    lwc_cms.resolver.resource.block:
+        class: Lwc\CmsBundle\Resolver\ResourceResolver
+        arguments:
+            - "@lwc_cms.repository.block"
+            - "@lwc_cms.factory.block"
+            - "code"
+
+    lwc_cms.resolver.resource.media:
+        class: Lwc\CmsBundle\Resolver\ResourceResolver
+        arguments:
+            - "@lwc_cms.repository.media"
+            - "@lwc_cms.factory.media"
+            - "code"
+
+    lwc_cms.resolver.block_resource:
+        class: Lwc\CmsBundle\Resolver\BlockResourceResolver
+        public: true
+        arguments:
+            - "@lwc_cms.repository.block"
+            - "@logger"
+
+    lwc_cms.resolver.page_resource:
+        class: Lwc\CmsBundle\Resolver\PageResourceResolver
+        public: true
+        arguments:
+            - "@lwc_cms.repository.page"
+            - "@sylius.context.locale"
+            - "@logger"
+
+    lwc_cms.resolver.media_type:
+        class: Lwc\CmsBundle\Resolver\MediaTypeResolver
+
+    lwc_cms.resolver.media_resource:
+        class: Lwc\CmsBundle\Resolver\MediaResourceResolver
+        public: true
+        arguments:
+            - "@lwc_cms.repository.media"
+            - "@logger"
+
+    lwc_cms.resolver.media_provider:
+        class: Lwc\CmsBundle\Resolver\MediaProviderResolver
+        public: true
+        arguments:
+            - "@lwc_cms.registry.media_provider"
+
+    lwc_cms.resolver.importer_sections:
+        class: Lwc\CmsBundle\Resolver\ImporterSectionsResolver
+        arguments:
+            - "@lwc_cms.assigner.sections"

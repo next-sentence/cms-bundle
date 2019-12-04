@@ -1,0 +1,6 @@
+{% extends '@SyliusUi/Form/theme.html.twig' %}
+
+{% block Lwc_section_autocomplete_choice_row %}
+    {{ form_row(form, {'remote_url': path('lwc_cms_admin_ajax_section_by_name_phrase'), 'load_edit_url': path('lwc_cms_admin_ajax_section_by_code')}) }}
+{% endblock %}
+

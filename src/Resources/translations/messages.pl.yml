@@ -1,0 +1,37 @@
+lwc_cms:
+    ui:
+        blocks: Bloki
+        pages: Strony
+        content_management: Zarządzanie treścią
+        cms: Zarządzanie treścią
+        enabled: Włączony
+        blocks_header: Bloki
+        blocks_subheader: Zarządzaj blokami
+        text_block: Blok tekstu
+        html_block: Blok HTML
+        image_block: Blok zdjęcia
+        pages_header: Strony
+        pages_subheader: Zarządzaj swoimi stronami
+        products: Produkty
+        page_related_products: Produkty powiązane ze stroną
+        name: Nazwa
+        slug: Link
+        meta_keywords: Słowa kluczowe
+        meta_description: Opis sekcji meta
+        content: Treść
+        faq: FAQ
+        code: Kod
+        contents: Treść
+        images: Zdjęcia
+        image: Zdjęcie
+        link: Link
+        faq_header: FAQ
+        faq_subheader: Zarządzaj najczęściej zadawanymi pytaniami
+        frequently_asked_questions: Najczęściej zadawane pytania
+        question: Pytanie
+        answer: Odpowiedź
+        sections: Sekcje
+        sections_header: Sekcje
+        sections_subheader: Zarządzaj sekcjami
+        position: Pozycja
+        title: Tytuł

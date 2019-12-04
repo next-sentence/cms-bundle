@@ -1,0 +1,11 @@
+Lwc\CmsBundle\Entity\PageImage:
+    type: mappedSuperclass
+    table: lwc_cms_page_image
+    oneToOne:
+        owner:
+            targetEntity: Lwc\CmsBundle\Entity\PageTranslationInterface
+            inversedBy: image
+            cascade: [ALL]
+            joinColumn:
+                name: owner_id
+                referencedColumnName: id

@@ -1,0 +1,27 @@
+lwc_cms_admin_media:
+    resource: |
+        alias: lwc_cms.media
+        section: admin
+        templates: LwcCmsBundle:CrudUi
+        redirect: update
+        grid: lwc_cms_admin_media
+        except: ['show']
+        permission: true
+        vars:
+            all:
+                header: lwc_cms.ui.media_header
+                subheader: lwc_cms.ui.media_subheader
+                templates:
+                    form: "@LwcCmsBundle/Media/Crud/_form.html.twig"
+            index:
+                icon: file
+    type: sylius.resource
+
+lwc_cms_admin_media_preview:
+    path: /media/preview/{id}
+    methods: [POST, PUT]
+    defaults:
+        _controller: lwc_cms.controller.media:previewAction
+        _sylius:
+            template: "@LwcCmsBundle/Media/preview.html.twig"
+        id: null

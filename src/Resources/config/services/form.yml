@@ -1,0 +1,109 @@
+services:
+    lwc_cms.form.type.block:
+        class: Lwc\CmsBundle\Form\Type\BlockType
+        arguments:
+            - "%lwc_cms.model.block.class%"
+            - ['Lwc']
+        tags:
+            - { name: form.type }
+
+    lwc_cms.form.type.translation.block:
+        class: Lwc\CmsBundle\Form\Type\Translation\BlockTranslationType
+        arguments:
+            - "%lwc_cms.model.block_translation.class%"
+            - ['Lwc']
+        tags:
+            - { name: form.type }
+
+    lwc_cms.form.type.block_image:
+        class: Lwc\CmsBundle\Form\Type\BlockImageType
+        arguments:
+            - Lwc\CmsBundle\Entity\BlockImage
+            - ['Lwc']
+        tags:
+            - { name: form.type }
+
+    lwc_cms.form.type.page:
+        class: Lwc\CmsBundle\Form\Type\PageType
+        arguments:
+            - "%lwc_cms.model.page.class%"
+            - ['Lwc']
+        tags:
+            - { name: form.type }
+
+    lwc_cms.form.type.page_image:
+        class: Lwc\CmsBundle\Form\Type\PageImageType
+        arguments:
+            - Lwc\CmsBundle\Entity\PageImage
+            - ['Lwc']
+        tags:
+            - { name: form.type }
+
+    lwc_cms.form.type.translation.page:
+        class: Lwc\CmsBundle\Form\Type\Translation\PageTranslationType
+        arguments:
+            - "%lwc_cms.model.page_translation.class%"
+            - ['Lwc']
+        tags:
+            - { name: form.type }
+
+    lwc_cms.form.type.frequently_asked_question:
+        class: Lwc\CmsBundle\Form\Type\FrequentlyAskedQuestionType
+        arguments:
+            - "%lwc_cms.model.frequently_asked_question.class%"
+            - ['Lwc']
+        tags:
+            - { name: form.type }
+
+    lwc_cms.form.type.translation.frequently_asked_question:
+        class: Lwc\CmsBundle\Form\Type\Translation\FrequentlyAskedQuestionTranslationType
+        arguments:
+            - "%lwc_cms.model.frequently_asked_question_translation.class%"
+            - ['Lwc']
+        tags:
+            - { name: form.type }
+
+    lwc_cms.form.type.section:
+        class: Lwc\CmsBundle\Form\Type\SectionType
+        arguments:
+            - "%lwc_cms.model.section.class%"
+            - ['Lwc']
+        tags:
+            - { name: form.type }
+
+    lwc_cms.form.type.translation.section:
+        class: Lwc\CmsBundle\Form\Type\Translation\SectionTranslationType
+        arguments:
+            - "%lwc_cms.model.section_translation.class%"
+            - ['Lwc']
+        tags:
+            - { name: form.type }
+
+    lwc_cms.form.type.import:
+        class: Lwc\CmsBundle\Form\Type\ImportType
+        tags:
+            - { name: form.type }
+
+    lwc_cms.form.type.translation.media:
+        class: Lwc\CmsBundle\Form\Type\Translation\MediaTranslationType
+        arguments:
+            - "%lwc_cms.model.media_translation.class%"
+            - ['Lwc']
+        tags:
+            - { name: form.type }
+
+    lwc_cms.form.type.media:
+        class: Lwc\CmsBundle\Form\Type\MediaType
+        arguments:
+            - "%lwc_cms.model.media.class%"
+            - ['Lwc']
+            - "%lwc_cms.media_providers%"
+        tags:
+            - { name: form.type }
+
+    lwc_cms.form.type.wysiwyg:
+        class: Lwc\CmsBundle\Form\Type\WysiwygType
+        arguments:
+            - "@router.default"
+        tags:
+            - { name: form.type }

@@ -1,0 +1,14 @@
+Lwc\CmsBundle\Entity\SectionTranslation:
+    type: mappedSuperclass
+    table: lwc_cms_section_translation
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            column: name
+            type: string
+            nullable: true

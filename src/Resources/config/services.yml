@@ -1,0 +1,58 @@
+imports:
+    - { resource: services/twig.yml }
+    - { resource: services/form.yml }
+    - { resource: services/event_listener.yml }
+    - { resource: services/controller.yml }
+    - { resource: services/fixture.yml }
+    - { resource: services/importer.yml }
+    - { resource: services/resolver.yml }
+    - { resource: services/media_provider.yml }
+    - { resource: services/assigner.yml }
+
+parameters:
+    lwc_cms.media_provider.interface: Lwc\CmsBundle\MediaProvider\ProviderInterface
+
+services:
+    lwc_cms.reader.csv:
+        class: Lwc\CmsBundle\Reader\CsvReader
+
+    lwc_cms.processor.import:
+        class: Lwc\CmsBundle\Processor\ImportProcessor
+        arguments:
+            - "@lwc_cms.importer.chain"
+            - "@lwc_cms.reader.csv"
+            - "@doctrine.orm.entity_manager"
+
+    lwc_cms.command.import_from_csv:
+        class: Lwc\CmsBundle\Command\ImportFromCsvCommand
+        arguments:
+            - "@lwc_cms.processor.import"
+        tags:
+            - { name: console.command }
+
+    lwc_cms.downloader.image:
+        class: Lwc\CmsBundle\Downloader\ImageDownloader
+        arguments:
+            - "@filesystem"
+
+    lwc_cms.registry.media_provider:
+        class: Sylius\Component\Registry\ServiceRegistry
+        arguments:
+            - "%lwc_cms.media_provider.interface%"
+            - "Media provider"
+
+    lwc_cms.image_uploader:
+        class: Lwc\CmsBundle\Uploader\ImageUploader
+        arguments:
+            - "@lwc_cms.media.filesystem"
+
+    lwc_cms.media_uploader:
+        class: Lwc\CmsBundle\Uploader\MediaUploader
+        arguments:
+            - "@lwc_cms.media.filesystem"
+
+    lwc_cms.media.filesystem:
+        class: Gaufrette\Filesystem
+        factory: ['@knp_gaufrette.filesystem_map', get]
+        arguments:
+            - "%lwc_cms.uploader.filesystem%"

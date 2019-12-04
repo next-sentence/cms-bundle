@@ -1,0 +1,16 @@
+Lwc\CmsBundle\Entity\Image:
+    type: mappedSuperclass
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        type:
+            column: type
+            type: string
+            nullable: true
+        path:
+            column: path
+            type: string

@@ -1,0 +1,13 @@
+sylius_resource:
+    resources:
+        lwc_cms.section:
+            driver: doctrine/orm
+            classes:
+                model: Lwc\CmsBundle\Entity\Section
+                interface: Lwc\CmsBundle\Entity\SectionInterface
+                form: Lwc\CmsBundle\Form\Type\SectionType
+                repository: Lwc\CmsBundle\Repository\SectionRepository
+            translation:
+                classes:
+                    model: Lwc\CmsBundle\Entity\SectionTranslation
+                    interface: Lwc\CmsBundle\Entity\SectionTranslationInterface

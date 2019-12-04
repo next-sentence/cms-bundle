@@ -1,0 +1,12 @@
+default:
+    suites:
+        ui_shop_blocks:
+            contexts:
+                - sylius.behat.context.hook.doctrine_orm
+
+                - sylius.behat.context.setup.channel
+                - bitbag_sylius_cms_plugin.behat.context.setup.block
+
+                - bitbag_sylius_cms_plugin.behat.context.ui.shop.homepage_blocks
+            filters:
+                tags: "@shop_blocks && @ui"

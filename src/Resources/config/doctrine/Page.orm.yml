@@ -1,0 +1,45 @@
+Lwc\CmsBundle\Entity\Page:
+    type: mappedSuperclass
+    table: lwc_cms_page
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        code:
+            column: code
+            type: string
+            length: 250
+            unique: true
+        enabled:
+            column: enabled
+            type: boolean
+        createdAt:
+            column: created_at
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: create
+        updatedAt:
+            column: updated_at
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: update
+    manyToMany:
+        sections:
+            targetEntity: Lwc\CmsBundle\Entity\SectionInterface
+            joinTable:
+                name: lwc_cms_page_sections
+                joinColumns:
+                    block_id:
+                        referencedColumnName: id
+                        onDelete: CASCADE
+                inverseJoinColumns:
+                    section_id:
+                        referencedColumnName: id
+                        onDelete: CASCADE

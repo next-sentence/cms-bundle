@@ -1,0 +1,7 @@
+{% for block in blocks %}
+    <div class="column">
+        <div class="ui segment">
+            {{ lwc_cms_render_block(block.code) }}
+        </div>
+    </div>
+{% endfor %}
