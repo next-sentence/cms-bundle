@@ -3,7 +3,7 @@ services:
         class: Lwc\CmsBundle\Controller\PageSlugController
         public: true
         arguments:
-            - "@sylius.generator.slug"
+            - "@lwc_cms.generator.slug"
 
     lwc_cms.controller.action.admin.import_data:
         class: Lwc\CmsBundle\Controller\Action\Admin\ImportDataAction

@@ -5,6 +5,7 @@ imports:
 
 parameters:
     lwc_cms.uploader.filesystem: lwc_cms_media
+    lwc.public_dir: '%kernel.project_dir%/public'
 
 jms_serializer:
     metadata:
@@ -17,7 +18,7 @@ knp_gaufrette:
     adapters:
         lwc_cms_media:
             local:
-                directory: "%sylius_core.public_dir%"
+                directory: "%lwc.public_dir%"
                 create: true
     filesystems:
         lwc_cms_media:

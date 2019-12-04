@@ -1,0 +1,3 @@
+services:
+    lwc_cms.generator.slug:
+        class: Lwc\CmsBundle\Generator\SlugGenerator

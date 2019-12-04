@@ -54,7 +54,7 @@ final class MediaController extends ResourceController
 
         $this->eventDispatcher->dispatch(ResourceActions::SHOW, $configuration, $media);
 
-        $mediaPath = $this->getParameter('sylius_core.public_dir') . '/' . $media->getPath();
+        $mediaPath = $this->getParameter('lwc.public_dir') . '/' . $media->getPath();
         $mediaFile = new File($mediaPath);
         $mediaName = $media->getName() . '.' . $mediaFile->guessExtension();
         $response = new BinaryFileResponse($mediaPath);
@@ -109,7 +109,7 @@ final class MediaController extends ResourceController
             return;
         }
 
-        $file = $media->getFile() ?: new File($this->getParameter('sylius_core.public_dir') . '/' . $media->getPath());
+        $file = $media->getFile() ?: new File($this->getParameter('lwc.public_dir') . '/' . $media->getPath());
         $base64Content = base64_encode(file_get_contents($file->getPathname()));
         $path = 'data:' . $file->getMimeType() . ';base64, ' . $base64Content;
 

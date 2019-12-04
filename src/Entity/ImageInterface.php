@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Component\Core\Model;
-
 namespace Lwc\CmsBundle\Entity;
+
+use Sylius\Component\Resource\Model\ResourceInterface;
 
 interface ImageInterface extends ResourceInterface
 {
