@@ -4,7 +4,7 @@ services:
         arguments:
             - "@lwc_cms.media_uploader"
             - "@templating.engine.twig"
-            - "LwcCms/Shop/Media/Show/image.html.twig"
+            - "@@LwcCms/Shop/Media/Show/image.html.twig"
             - "media/image"
         tags:
             - { name: lwc_cms.media_provider, type: image, label: lwc_cms.ui.image_provider }
@@ -14,7 +14,7 @@ services:
         arguments:
             - "@lwc_cms.media_uploader"
             - "@templating.engine.twig"
-            - "LwcCms/Shop/Media/Show/video.html.twig"
+            - "@@LwcCms/Shop/Media/Show/video.html.twig"
             - "media/video"
         tags:
             - { name: lwc_cms.media_provider, type: video, label: lwc_cms.ui.video_provider }
@@ -24,7 +24,7 @@ services:
         arguments:
             - "@lwc_cms.media_uploader"
             - "@templating.engine.twig"
-            - "LwcCms/Shop/Media/Show/file.html.twig"
+            - "@@LwcCms/Shop/Media/Show/file.html.twig"
             - "media/file"
         tags:
             - { name: lwc_cms.media_provider, type: file, label: lwc_cms.ui.file_provider }
