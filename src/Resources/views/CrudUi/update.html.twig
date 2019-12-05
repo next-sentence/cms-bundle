@@ -25,7 +25,5 @@
 {% block stylesheets %}
     {{ parent() }}
 
-    <link rel="stylesheet" href="{{ asset('bundles/lwccmsbundle/css/style.css') }}">
-
     {{ sonata_block_render_event(event_prefix ~ '.stylesheets') }}
 {% endblock %}
