@@ -4,7 +4,7 @@ lwc_cms_shop_page_show:
     defaults:
         _controller: lwc_cms.controller.page:showAction
         _sylius:
-            template: "@LwcCmsBundle/Shop/Page/show.html.twig"
+            template: "@LwcCms/Shop/Page/show.html.twig"
             repository:
                 method: findOneEnabledBySlug
                 arguments:
@@ -30,7 +30,7 @@ lwc_cms_shop_page_index_by_section_code:
     defaults:
         _controller: lwc_cms.controller.page:indexAction
         _sylius:
-            template: "@LwcCmsBundle/Shop/Page/index.html.twig"
+            template: "@LwcCms/Shop/Page/index.html.twig"
             grid: lwc_cms_shop_page
             repository:
                 method: findBySectionCode
@@ -44,7 +44,7 @@ lwc_cms_shop_page_index_by_section_code_no_grid:
     defaults:
         _controller: lwc_cms.controller.page:indexAction
         _sylius:
-            template: "@LwcCmsBundle/Shop/Page/index.html.twig"
+            template: "@LwcCms/Shop/Page/index.html.twig"
             repository:
                 method: findBySectionCode
                 arguments:

@@ -12,7 +12,7 @@ lwc_cms_admin_block:
                 header: lwc_cms.ui.blocks_header
                 subheader: lwc_cms.ui.blocks_subheader
                 templates:
-                    form: "@LwcCmsBundle/Block/Crud/_form.html.twig"
+                    form: "@LwcCms/Block/Crud/_form.html.twig"
             index:
                 icon: block layout
             route:
@@ -26,4 +26,4 @@ lwc_cms_admin_block_preview:
     defaults:
         _controller: lwc_cms.controller.block:previewAction
         _sylius:
-            template: "@LwcCmsBundle/Block/preview.html.twig"
+            template: "@LwcCms/Block/preview.html.twig"

@@ -5,4 +5,4 @@ imports:
 sylius_grid:
     templates:
         action:
-            import: "@LwcCmsBundle/Grid/Action/import.html.twig"
+            import: "@LwcCms/Grid/Action/import.html.twig"

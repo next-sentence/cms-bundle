@@ -41,7 +41,7 @@ class RenderBlockExtension extends \Twig_Extension
         $block = $this->blockResourceResolver->findOrLog($code);
 
         if (null !== $block) {
-            $template = $template ?? '@LwcCmsBundle/Shop/Block/show.html.twig';
+            $template = $template ?? '@LwcCms/Shop/Block/show.html.twig';
 
             return $this->templatingEngine->render($template, ['block' => $block]);
         }

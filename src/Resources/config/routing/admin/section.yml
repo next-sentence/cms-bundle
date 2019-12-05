@@ -12,7 +12,7 @@ lwc_cms_admin_section:
                 header: lwc_cms.ui.sections_header
                 subheader: lwc_cms.ui.sections_subheader
                 templates:
-                    form: "@LwcCmsBundle/Section/Crud/_form.html.twig"
+                    form: "@LwcCms/Section/Crud/_form.html.twig"
             index:
                 icon: grid layout
     type: sylius.resource

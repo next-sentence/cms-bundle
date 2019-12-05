@@ -12,7 +12,7 @@ lwc_cms_admin_media:
                 header: lwc_cms.ui.media_header
                 subheader: lwc_cms.ui.media_subheader
                 templates:
-                    form: "@LwcCmsBundle/Media/Crud/_form.html.twig"
+                    form: "@LwcCms/Media/Crud/_form.html.twig"
             index:
                 icon: file
     type: sylius.resource
@@ -23,5 +23,5 @@ lwc_cms_admin_media_preview:
     defaults:
         _controller: lwc_cms.controller.media:previewAction
         _sylius:
-            template: "@LwcCmsBundle/Media/preview.html.twig"
+            template: "@LwcCms/Media/preview.html.twig"
         id: null

@@ -12,7 +12,7 @@ lwc_cms_admin_page:
                 header: lwc_cms.ui.pages_header
                 subheader: lwc_cms.ui.pages_subheader
                 templates:
-                    form: "@LwcCmsBundle/Page/Crud/_form.html.twig"
+                    form: "@LwcCms/Page/Crud/_form.html.twig"
             index:
                 icon: sticky note
     type: sylius.resource
@@ -23,5 +23,5 @@ lwc_cms_admin_page_preview:
     defaults:
         _controller: lwc_cms.controller.page:previewAction
         _sylius:
-            template: "@LwcCmsBundle/Page/preview.html.twig"
+            template: "@LwcCms/Page/preview.html.twig"
         id: null
