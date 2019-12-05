@@ -2,7 +2,7 @@ lwc_cms_admin_frequently_asked_question:
     resource: |
         alias: lwc_cms.frequently_asked_question
         section: admin
-        templates: SyliusAdminBundle:Crud
+        templates: LwcCmsBundle:CrudUi
         redirect: update
         grid: lwc_cms_admin_frequently_asked_question
         except: ['show']

@@ -2,7 +2,7 @@ lwc_cms_admin_section:
     resource: |
         alias: lwc_cms.section
         section: admin
-        templates: SyliusAdminBundle:Crud
+        templates: LwcCmsBundle:CrudUi
         redirect: update
         grid: lwc_cms_admin_section
         except: ['show']
