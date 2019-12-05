@@ -10,7 +10,7 @@ parameters:
 jms_serializer:
     metadata:
         directories:
-            Lwc-section:
+            lwc-section:
                 namespace_prefix: "Lwc\\CmsBundle"
                 path: "@LwcCmsBundle/Resources/config/serializer"
 

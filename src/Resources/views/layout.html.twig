@@ -10,12 +10,12 @@
 {% block javascripts %}
     {{ parent() }}
 
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/Lwc-upload-csv.js'} %}
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/Lwc-page-slug.js'} %}
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/Lwc-block-image-preview.js'} %}
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/Lwc-cms-resource-preview.js'} %}
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/Lwc-block-image-preview.js'} %}
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/Lwc-cms-resource-preview.js'} %}
+    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/lwc-upload-csv.js'} %}
+    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/lwc-page-slug.js'} %}
+    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/lwc-block-image-preview.js'} %}
+    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/lwc-cms-resource-preview.js'} %}
+    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/lwc-block-image-preview.js'} %}
+    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/lwc-cms-resource-preview.js'} %}
 
     {{ sonata_block_render_event(event_prefix ~ '.javascripts') }}
 {% endblock %}

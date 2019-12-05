@@ -11,9 +11,9 @@
         <div class="ui sixteen wide column">
 
             {% if resources.data|length > 0 %}
-                <div class="ui one column stackable grid" id="Lwc-pages">
+                <div class="ui one column stackable grid" id="lwc-pages">
                     {% for page in resources.data %}
-                        <div class="item Lwc-page">
+                        <div class="item lwc-page">
                             <a href="{{ path('lwc_cms_shop_page_show', {'slug' : page.slug}) }}">
 
                                 <div class="content">

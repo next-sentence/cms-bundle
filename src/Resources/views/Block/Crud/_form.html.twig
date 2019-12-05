@@ -11,7 +11,7 @@
             {{ form_row(form.enabled) }}
             {{ form_row(form.sections) }}
 
-            <a href="#" class="ui labeled button icon primary Lwc-cms-resource-preview" data-url="{{ path('lwc_cms_admin_block_preview') }}">
+            <a href="#" class="ui labeled button icon primary lwc-cms-resource-preview" data-url="{{ path('lwc_cms_admin_block_preview') }}">
                 <i class="eye icon"></i>
                 {{ 'lwc_cms.ui.preview'|trans }}
             </a>
@@ -20,7 +20,7 @@
 </div>
 
 <div class="ui one column stackable grid">
-    <div class="column" id="Lwc-block-image">
+    <div class="column" id="lwc-block-image">
         {{ translationForm(form.translations, resource) }}
     </div>
 </div>

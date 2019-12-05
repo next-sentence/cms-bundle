@@ -24,7 +24,7 @@
         <div class="active section">{{ page.breadcrumb }}</div>
     </div>
     <div class="ui segment">
-        <h1 class="ui dividing header Lwc-page-name">{{ page.name }}</h1>
+        <h1 class="ui dividing header lwc-page-name">{{ page.name }}</h1>
 
         <div class="ui grid center aligned">
             <div class="eight wide column">
@@ -38,9 +38,9 @@
 
         <div class="ui hidden divider"></div>
 
-        <div class="Lwc-page-content">{{ lwc_cms_render_content(page) }}</div>
+        <div class="lwc-page-content">{{ lwc_cms_render_content(page) }}</div>
         <div class="ui dividing header"></div>
-        <div class="Lwc-page-sections">
+        <div class="lwc-page-sections">
             {% include '@LwcCms/Shop/Page/Show/_sections.html.twig' %}
         </div>
     </div>

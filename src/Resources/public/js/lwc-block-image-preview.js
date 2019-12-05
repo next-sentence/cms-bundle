@@ -44,6 +44,6 @@
 
 (function($) {
     $(document).ready(function () {
-        $(document).previewUploadedImage('#Lwc-block-image')
+        $(document).previewUploadedImage('#lwc-block-image')
     });
 })(jQuery);
