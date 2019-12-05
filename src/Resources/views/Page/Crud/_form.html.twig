@@ -1,7 +1,7 @@
-{% from '@LwcCmsBundle/Macro/translationForm.html.twig' import translationFormWithSlug %}
-{% form_theme form '@LwcCmsBundle/Form/theme.html.twig' %}
+{% from '@LwcCms/Macro/translationForm.html.twig' import translationFormWithSlug %}
+{% form_theme form '@LwcCms/Form/theme.html.twig' %}
 
-{% include '@LwcCmsBundle/Modal/_resourcePreview.html.twig' %}
+{% include '@LwcCms/Modal/_resourcePreview.html.twig' %}
 
 {{ form_errors(form) }}
 
@@ -22,6 +22,6 @@
 
 <div class="ui one column stackable grid">
     <div class="column" id="Lwc-block-image">
-        {{ translationFormWithSlug(form.translations, '@LwcCmsBundle/Page/Crud/_slugField.html.twig', page) }}
+        {{ translationFormWithSlug(form.translations, '@LwcCms/Page/Crud/_slugField.html.twig', page) }}
     </div>
 </div>

@@ -1,21 +1,21 @@
-{% extends '@SyliusAdmin/layout.html.twig' %}
+{% extends 'backend/layout.html.twig' %}
 
 {% block stylesheets %}
     {{ parent() }}
 
-    {% include 'SyliusUiBundle::_stylesheets.html.twig' with {'path': 'bundles/Lwcsyliuscmsplugin/css/style.css'} %}
+    {% include 'SyliusUiBundle::_stylesheets.html.twig' with {'path': 'bundles/lwccmsbundle/css/style.css'} %}
 {% endblock %}
 
 
 {% block javascripts %}
     {{ parent() }}
 
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/Lwcsyliuscmsplugin/js/Lwc-upload-csv.js'} %}
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/Lwcsyliuscmsplugin/js/Lwc-page-slug.js'} %}
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/Lwcsyliuscmsplugin/js/Lwc-block-image-preview.js'} %}
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/Lwcsyliuscmsplugin/js/Lwc-cms-resource-preview.js'} %}
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/Lwcsyliuscmsplugin/js/Lwc-block-image-preview.js'} %}
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/Lwcsyliuscmsplugin/js/Lwc-cms-resource-preview.js'} %}
+    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/Lwc-upload-csv.js'} %}
+    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/Lwc-page-slug.js'} %}
+    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/Lwc-block-image-preview.js'} %}
+    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/Lwc-cms-resource-preview.js'} %}
+    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/Lwc-block-image-preview.js'} %}
+    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'bundles/lwccmsbundle/js/Lwc-cms-resource-preview.js'} %}
 
     {{ sonata_block_render_event(event_prefix ~ '.javascripts') }}
 {% endblock %}

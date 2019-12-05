@@ -1,4 +1,4 @@
-{% extends 'LwcCmsBundle::layout.html.twig' %}
+{% extends '@LwcCms/layout.html.twig' %}
 
 {% import 'SyliusUiBundle:Macro:headers.html.twig' as headers %}
 
@@ -13,11 +13,11 @@
 {% block content %}
     {{ sonata_block_render_event(event_prefix ~ '.before_header', {'resources': resources}) }}
 
-    {% include '@SyliusAdmin/Crud/Index/_header.html.twig' %}
+    {% include 'backend/crud/index/_header.html.twig' %}
 
     {{ sonata_block_render_event(event_prefix ~ '.after_header', {'resources': resources}) }}
 
-    {% include '@SyliusAdmin/Crud/Index/_content.html.twig' %}
+    {% include 'backend/crud/index/_content.html.twig' %}
 
     {{ sonata_block_render_event(event_prefix ~ '.after_content', {'resources': resources}) }}
 {% endblock %}

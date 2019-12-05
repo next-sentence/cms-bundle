@@ -2,7 +2,7 @@ services:
     lwc_cms.menu.content_management:
         class: Lwc\CmsBundle\Menu\ContentManagementMenuBuilder
         tags:
-            - { name: kernel.event_listener, event: sylius.menu.admin.main, method: buildMenu }
+            - { name: kernel.event_listener, event: app.menu.admin.main, method: buildMenu }
 
     lwc_cms.event_listener.page_image_upload:
         class: Lwc\CmsBundle\EventListener\PageImageUploadListener

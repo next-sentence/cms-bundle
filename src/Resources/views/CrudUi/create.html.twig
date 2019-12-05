@@ -1,4 +1,4 @@
-{% extends 'LwcCmsBundle::layout.html.twig' %}
+{% extends '@LwcCms/layout.html.twig' %}
 
 {% import 'SyliusUiBundle:Macro:headers.html.twig' as headers %}
 
@@ -7,16 +7,16 @@
 
 {% block title %}{{ header|trans }} {{ parent() }}{% endblock %}
 
-{% form_theme form '@SyliusAdmin/Form/theme.html.twig' %}
+{% form_theme form 'backend/form/theme.html.twig' %}
 
 {% block content %}
     {{ sonata_block_render_event(event_prefix ~ '.before_header', {'resource': resource}) }}
 
-    {% include '@SyliusAdmin/Crud/Create/_header.html.twig' %}
+    {% include 'backend/crud/create/_header.html.twig' %}
 
     {{ sonata_block_render_event(event_prefix ~ '.after_header', {'resource': resource}) }}
 
-    {% include '@SyliusAdmin/Crud/Create/_content.html.twig' %}
+    {% include 'backend/crud/create/_content.html.twig' %}
 
     {{ sonata_block_render_event(event_prefix ~ '.after_content', {'resource': resource}) }}
 {% endblock %}
@@ -24,7 +24,7 @@
 {% block stylesheets %}
     {{ parent() }}
 
-    <link rel="stylesheet" href="{{ absolute_url(asset('bundles/Lwcsyliuscmsplugin/css/style.css')) }}">
+    <link rel="stylesheet" href="{{ absolute_url(asset('bundles/lwccmsbundle/css/style.css')) }}">
 
     {{ sonata_block_render_event(event_prefix ~ '.stylesheets') }}
 {% endblock %}

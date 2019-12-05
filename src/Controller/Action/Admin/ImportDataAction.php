@@ -87,7 +87,7 @@ final class ImportDataAction
             ->setData([
                 'form' => $form->createView(),
             ])
-            ->setTemplate('@LwcCmsBundle/Grid/Form/_importForm.html.twig')
+            ->setTemplate('@LwcCms/Grid/Form/_importForm.html.twig')
         ;
 
         return $this->viewHandler->handle($view);
