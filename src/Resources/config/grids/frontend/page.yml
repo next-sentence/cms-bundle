@@ -1,12 +1,12 @@
 sylius_grid:
     grids:
-        lwc_cms_shop_page:
+        lwc_cms_frontend_page:
             driver:
                 name: doctrine/orm
                 options:
                     class: "%lwc_cms.model.page.class%"
                     repository:
-                        method: createShopListQueryBuilder
+                        method: createFrontendListQueryBuilder
                         arguments:
                             sectionCode: $sectionCode
             sorting:

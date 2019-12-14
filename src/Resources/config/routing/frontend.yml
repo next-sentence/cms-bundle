@@ -1,0 +1,14 @@
+lwc_cms_frontend_block:
+    resource: "@LwcCmsBundle/Resources/config/routing/frontend/block.yml"
+
+lwc_cms_frontend_page:
+    resource: "@LwcCmsBundle/Resources/config/routing/frontend/page.yml"
+
+lwc_cms_frontend_frequently_asked_question:
+    resource: "@LwcCmsBundle/Resources/config/routing/frontend/frequently_asked_question.yml"
+
+lwc_cms_frontend_section:
+    resource: "@LwcCmsBundle/Resources/config/routing/frontend/section.yml"
+
+lwc_cms_frontend_media:
+    resource: "@LwcCmsBundle/Resources/config/routing/frontend/media.yml"

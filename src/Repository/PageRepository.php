@@ -62,7 +62,7 @@ class PageRepository extends EntityRepository implements PageRepositoryInterface
         ;
     }
 
-    public function createShopListQueryBuilder(string $sectionCode): QueryBuilder
+    public function createFrontendListQueryBuilder(string $sectionCode): QueryBuilder
     {
         return $this->createQueryBuilder('o')
             ->innerJoin('o.sections', 'section')

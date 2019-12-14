@@ -1,9 +1,9 @@
-lwc_cms_shop_frequently_asked_question_index:
+lwc_cms_frontend_frequently_asked_question_index:
     path: /faq
     defaults:
         _controller: lwc_cms.controller.frequently_asked_question:indexAction
         _sylius:
-            template: "@LwcCms/Shop/FrequentlyAskedQuestion/index.html.twig"
+            template: "@LwcCms/Frontend/FrequentlyAskedQuestion/index.html.twig"
             repository:
                 method: findEnabledOrderedByPosition
                 arguments:

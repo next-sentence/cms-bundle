@@ -1,17 +1,17 @@
-lwc_cms_shop_page_show:
+lwc_cms_frontend_page_show:
     path: /page/{slug}
     methods: [GET]
     defaults:
         _controller: lwc_cms.controller.page:showAction
         _sylius:
-            template: "@LwcCms/Shop/Page/show.html.twig"
+            template: "@LwcCms/Frontend/Page/show.html.twig"
             repository:
                 method: findOneEnabledBySlug
                 arguments:
                     - $slug
                     - "expr:service('sylius.context.locale').getLocaleCode()"
 
-lwc_cms_shop_page_show_link_by_code:
+lwc_cms_frontend_page_show_link_by_code:
     path: /page/link/{code}
     methods: [GET]
     defaults:
@@ -24,34 +24,34 @@ lwc_cms_shop_page_show_link_by_code:
                     - $code
                     - "expr:service('sylius.context.locale').getLocaleCode()"
 
-lwc_cms_shop_page_index_by_section_code:
+lwc_cms_frontend_page_index_by_section_code:
     path: /pages/{sectionCode}
     methods: [GET]
     defaults:
         _controller: lwc_cms.controller.page:indexAction
         _sylius:
-            template: "@LwcCms/Shop/Page/index.html.twig"
-            grid: lwc_cms_shop_page
+            template: "@LwcCms/Frontend/Page/index.html.twig"
+            grid: lwc_cms_frontend_page
             repository:
                 method: findBySectionCode
                 arguments:
                     - $sectionCode
                     - "expr:service('sylius.context.locale').getLocaleCode()"
                     -
-lwc_cms_shop_page_index_by_section_code_no_grid:
+lwc_cms_frontend_page_index_by_section_code_no_grid:
     path: /pages/{sectionCode}/no-grid
     methods: [GET]
     defaults:
         _controller: lwc_cms.controller.page:indexAction
         _sylius:
-            template: "@LwcCms/Shop/Page/index.html.twig"
+            template: "@LwcCms/Frontend/Page/index.html.twig"
             repository:
                 method: findBySectionCode
                 arguments:
                     - $sectionCode
                     - "expr:service('sylius.context.locale').getLocaleCode()"
 
-lwc_cms_shop_page_index_by_section_code_template:
+lwc_cms_frontend_page_index_by_section_code_template:
     path: /pages-template/{sectionCode}
     defaults:
         _controller: lwc_cms.controller.page:indexAction

@@ -21,7 +21,7 @@ interface PageRepositoryInterface extends RepositoryInterface
         ?string $localeCode
     ): ?PageInterface;
 
-    public function createShopListQueryBuilder(string $sectionCode): QueryBuilder;
+    public function createFrontendListQueryBuilder(string $sectionCode): QueryBuilder;
 
     public function findBySectionCode(string $sectionCode, ?string $localeCode): array;
 }

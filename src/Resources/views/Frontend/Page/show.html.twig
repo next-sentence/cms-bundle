@@ -1,4 +1,4 @@
-{% extends '@SyliusShop/layout.html.twig' %}
+{% extends 'frontend/layout.html.twig' %}
 
 {%- block title -%}
     {% if page.title is not empty %}
@@ -19,7 +19,7 @@
 
 {% block content %}
     <div class="ui breadcrumb">
-        <a href="{{ path('sylius_shop_homepage') }}" class="section">{{ 'sylius.ui.home'|trans }}</a>
+        <a href="{{ path('sylius_frontend_homepage') }}" class="section">{{ 'sylius.ui.home'|trans }}</a>
         <div class="divider"> /</div>
         <div class="active section">{{ page.breadcrumb }}</div>
     </div>
@@ -41,7 +41,7 @@
         <div class="lwc-page-content">{{ lwc_cms_render_content(page) }}</div>
         <div class="ui dividing header"></div>
         <div class="lwc-page-sections">
-            {% include '@LwcCms/Shop/Page/Show/_sections.html.twig' %}
+            {% include '@LwcCms/Frontend/Page/Show/_sections.html.twig' %}
         </div>
     </div>
 {% endblock %}

@@ -1,4 +1,4 @@
-lwc_cms_shop_block_render:
+lwc_cms_frontend_block_render:
     path: /block/{code}
     methods: [GET]
     defaults:
@@ -9,7 +9,7 @@ lwc_cms_shop_block_render:
                 arguments:
                     - $code
 
-lwc_cms_shop_block_index_by_section_code:
+lwc_cms_frontend_block_index_by_section_code:
     path: /blocks/section/{sectionCode}
     methods: [GET]
     defaults:

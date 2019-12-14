@@ -2,6 +2,6 @@ lwc_cms_admin:
     resource: "@LwcCmsBundle/Resources/config/routing/admin.yml"
     prefix: /admin
 
-lwc_cms_shop:
-    resource: "@LwcCmsBundle/Resources/config/routing/shop.yml"
+lwc_cms_frontend:
+    resource: "@LwcCmsBundle/Resources/config/routing/frontend.yml"
     prefix: /{_locale}

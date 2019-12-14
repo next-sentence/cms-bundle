@@ -1,4 +1,4 @@
-lwc_cms_shop_media_render:
+lwc_cms_frontend_media_render:
     path: /media/{code}
     methods: [GET]
     defaults:
@@ -9,7 +9,7 @@ lwc_cms_shop_media_render:
                 arguments:
                     - $code
 
-lwc_cms_shop_media_render_template:
+lwc_cms_frontend_media_render_template:
     path: /media-template/{code}
     methods: [GET]
     defaults:
@@ -21,13 +21,13 @@ lwc_cms_shop_media_render_template:
                 arguments:
                 - $code
 
-lwc_cms_shop_media_download:
+lwc_cms_frontend_media_download:
     path: /media/download/{code}
     methods: [GET]
     defaults:
         _controller: lwc_cms.controller.media:downloadMediaAction
 
-lwc_cms_shop_media_index_by_section_code:
+lwc_cms_frontend_media_index_by_section_code:
     path: /media/section/{sectionCode}
     methods: [GET]
     defaults:

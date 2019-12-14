@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class BlockController extends ResourceController
 {
-    const BLOCK_TEMPLATE = '@LwcCms/Shop/Block/show.html.twig';
+    const BLOCK_TEMPLATE = '@LwcCms/Frontend/Block/show.html.twig';
 
     public function renderBlockAction(Request $request): Response
     {

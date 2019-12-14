@@ -1,2 +1,0 @@
-imports:
-    - { resource: "@LwcCmsBundle/Resources/config/grids/shop/page.yml" }

@@ -1,6 +1,6 @@
 imports:
     - { resource: "@LwcCmsBundle/Resources/config/grids/admin.yml" }
-    - { resource: "@LwcCmsBundle/Resources/config/grids/shop.yml" }
+    - { resource: "@LwcCmsBundle/Resources/config/grids/frontend.yml" }
 
 sylius_grid:
     templates:

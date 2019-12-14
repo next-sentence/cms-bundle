@@ -4,7 +4,7 @@
 
 <p>{{ lwc_cms_render_content(media) }}</p>
 
-<a class="ui icon labeled primary button" href="{{ path('lwc_cms_shop_media_download', {'code': media.code}) }}">
+<a class="ui icon labeled primary button" href="{{ path('lwc_cms_frontend_media_download', {'code': media.code}) }}">
     <i class="download icon"></i>
     {{ 'lwc_cms.ui.download'|trans }}
 </a>

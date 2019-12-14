@@ -1,4 +1,4 @@
-lwc_cms_shop_section_show:
+lwc_cms_frontend_section_show:
     path: /section/{code}
     methods: [GET]
     defaults:
@@ -11,7 +11,7 @@ lwc_cms_shop_section_show:
                     - $code
                     - "expr:service('sylius.context.locale').getLocaleCode()"
 
-lwc_cms_shop_section_show_codes:
+lwc_cms_frontend_section_show_codes:
     path: /sections/{codes}
     methods: [GET]
     defaults:

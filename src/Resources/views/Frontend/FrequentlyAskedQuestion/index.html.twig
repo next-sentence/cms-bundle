@@ -1,4 +1,4 @@
-{% extends '@SyliusShop/layout.html.twig' %}
+{% extends 'frontend/layout.html.twig' %}
 
 {% import '@SyliusUi/Macro/messages.html.twig' as messages %}
 
@@ -9,7 +9,7 @@
                 <div class="ui one column stackable grid">
                     {% for frequentlyAskedQuestion in resources %}
                         <div class="lwc-frequently-asked-question">
-                            {% include '@LwcCms/Shop/FrequentlyAskedQuestion/Index/_show.html.twig' %}
+                            {% include '@LwcCms/Frontend/FrequentlyAskedQuestion/Index/_show.html.twig' %}
                         </div>
                     {% endfor %}
                 </div>
