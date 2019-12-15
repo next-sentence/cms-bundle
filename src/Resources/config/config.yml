@@ -4,7 +4,8 @@ imports:
     - { resource: "@LwcCmsBundle/Resources/config/services.yml" }
 
 parameters:
-    lwc_cms.uploader.filesystem: lwc_cms_media
+    lwc_cms.media.filesystem: lwc_cms_media
+    lwc_cms.image.filesystem: lwc_cms_image
     lwc.public_dir: '%kernel.project_dir%/public'
 
 jms_serializer:
@@ -20,6 +21,12 @@ knp_gaufrette:
             local:
                 directory: "%lwc.public_dir%"
                 create: true
+        lwc_cms_image:
+            local:
+                directory: "%lwc.public_dir%/media/image"
+                create: true
     filesystems:
         lwc_cms_media:
-            adapter: "%lwc_cms.uploader.filesystem%"
+            adapter: "%lwc_cms.media.filesystem%"
+        lwc_cms_image:
+            adapter: "%lwc_cms.image.filesystem%"

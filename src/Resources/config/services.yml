@@ -45,7 +45,7 @@ services:
     lwc_cms.image_uploader:
         class: Lwc\CmsBundle\Uploader\ImageUploader
         arguments:
-            - "@lwc_cms.media.filesystem"
+            - "@lwc_cms.image.filesystem"
 
     lwc_cms.media_uploader:
         class: Lwc\CmsBundle\Uploader\MediaUploader
@@ -56,4 +56,10 @@ services:
         class: Gaufrette\Filesystem
         factory: ['@knp_gaufrette.filesystem_map', get]
         arguments:
-            - "%lwc_cms.uploader.filesystem%"
+            - "%lwc_cms.media.filesystem%"
+
+    lwc_cms.image.filesystem:
+        class: Gaufrette\Filesystem
+        factory: ['@knp_gaufrette.filesystem_map', get]
+        arguments:
+            - "%lwc_cms.image.filesystem%"
