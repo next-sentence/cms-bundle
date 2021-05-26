@@ -7,9 +7,9 @@
     "description": "CMS plugin for Sylius resource applications.",
     "license": "MIT",
     "require": {
-        "php": "^7.2",
+        "php": "^7.3",
         "league/csv": "^9.1",
-        "friendsofsymfony/ckeditor-bundle": "^1.1",
+        "friendsofsymfony/ckeditor-bundle": "^1.1|^2.0",
         "sylius/resource-bundle": "^1.4",
         "sylius/grid-bundle": "^1.4",
         "sylius/fixtures-bundle": "^1.4",
@@ -18,7 +18,7 @@
         "sylius/user-bundle": "^1.4",
         "sylius/locale-bundle": "^1.4",
         "sylius/ui-bundle": "^1.4",
-        "knplabs/knp-gaufrette-bundle": "^0.6.1"
+        "knplabs/knp-gaufrette-bundle": "^0.6"
     },
     "require-dev": {
         "behat/behat": "^3.4",
@@ -33,7 +33,7 @@
         "lakion/mink-debug-extension": "^1.2.3",
         "lchrusciel/api-test-case": "^3.0",
         "matthiasnoback/symfony-config-test": "^3.0",
-        "phpspec/phpspec": "^5.0",
+        "phpspec/phpspec": "^5.0|^6.0",
         "phpstan/phpstan-doctrine": "^0.10",
         "phpstan/phpstan-shim": "^0.10",
         "phpstan/phpstan-symfony": "^0.10",
@@ -41,12 +41,12 @@
         "phpunit/phpunit": "^6.5",
         "sensiolabs/security-checker": "^5.0",
         "sylius-labs/coding-standard": "^2.0",
-        "symfony/browser-kit": "^3.4|^4.1",
-        "symfony/debug-bundle": "^3.4|^4.1",
-        "symfony/dotenv": "^4.2",
-        "symfony/intl": "^3.4|^4.1",
-        "symfony/web-profiler-bundle": "^3.4|^4.1",
-        "symfony/web-server-bundle": "^3.4|^4.1"
+        "symfony/browser-kit": "^3.4|^4.1|^5.2",
+        "symfony/debug-bundle": "^3.4|^4.1|^5.2",
+        "symfony/dotenv": "^4.2|^5.2",
+        "symfony/intl": "^3.4|^4.1|^5.2",
+        "symfony/web-profiler-bundle": "^3.4|^4.1|^5.2",
+        "symfony/web-server-bundle": "^3.4|^4.1|^5.2"
     },
     "conflict": {
         "symfony/symfony": "4.1.8",
