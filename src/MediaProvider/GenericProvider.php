@@ -6,15 +6,15 @@ namespace Lwc\CmsBundle\MediaProvider;
 
 use Lwc\CmsBundle\Entity\MediaInterface;
 use Lwc\CmsBundle\Uploader\MediaUploaderInterface;
-use Symfony\Component\Templating\EngineInterface;
+use Twig\Environment;
 
 final class GenericProvider implements ProviderInterface
 {
     /** @var MediaUploaderInterface */
     private $uploader;
 
-    /** @var EngineInterface */
-    private $twigEngine;
+    /** @var Environment */
+    private $twig;
 
     /** @var string */
     private $template;
@@ -24,12 +24,12 @@ final class GenericProvider implements ProviderInterface
 
     public function __construct(
         MediaUploaderInterface $uploader,
-        EngineInterface $twigEngine,
+        Environment $twig,
         string $template,
         string $pathPrefix
     ) {
         $this->uploader = $uploader;
-        $this->twigEngine = $twigEngine;
+        $this->twig = $twig;
         $this->template = $template;
         $this->pathPrefix = $pathPrefix;
     }
@@ -41,7 +41,7 @@ final class GenericProvider implements ProviderInterface
 
     public function render(MediaInterface $media, array $options = []): string
     {
-        return $this->twigEngine->render($this->template, array_merge(['media' => $media], $options));
+        return $this->twig->render($this->template, array_merge(['media' => $media], $options));
     }
 
     public function upload(MediaInterface $media): void

@@ -9,7 +9,7 @@ services:
         arguments:
             - "@lwc_cms.repository.block"
             - "@lwc_cms.resolver.block_resource"
-            - "@templating"
+            - "@twig"
         tags:
             - { name: twig.extension }
 

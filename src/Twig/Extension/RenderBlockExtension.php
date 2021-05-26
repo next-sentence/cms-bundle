@@ -6,7 +6,7 @@ namespace Lwc\CmsBundle\Twig\Extension;
 
 use Lwc\CmsBundle\Repository\BlockRepositoryInterface;
 use Lwc\CmsBundle\Resolver\BlockResourceResolverInterface;
-use Symfony\Component\Templating\EngineInterface;
+use Twig\Environment;
 
 class RenderBlockExtension extends \Twig_Extension
 {
@@ -16,17 +16,17 @@ class RenderBlockExtension extends \Twig_Extension
     /** @var BlockResourceResolverInterface */
     private $blockResourceResolver;
 
-    /** @var EngineInterface */
-    private $templatingEngine;
+    /** @var Environment */
+    private $twig;
 
     public function __construct(
         BlockRepositoryInterface $blockRepository,
         BlockResourceResolverInterface $blockResourceResolver,
-        EngineInterface $templatingEngine
+        Environment $twig
     ) {
         $this->blockRepository = $blockRepository;
         $this->blockResourceResolver = $blockResourceResolver;
-        $this->templatingEngine = $templatingEngine;
+        $this->twig = $twig;
     }
 
     public function getFunctions(): array
@@ -43,7 +43,7 @@ class RenderBlockExtension extends \Twig_Extension
         if (null !== $block) {
             $template = $template ?? '@LwcCms/Frontend/Block/show.html.twig';
 
-            return $this->templatingEngine->render($template, ['block' => $block]);
+            return $this->twig->render($template, ['block' => $block]);
         }
 
         return '';
