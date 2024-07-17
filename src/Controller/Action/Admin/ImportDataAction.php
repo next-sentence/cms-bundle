@@ -15,8 +15,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class ImportDataAction
 {
@@ -25,9 +24,6 @@ final class ImportDataAction
 
     /** @var FormFactoryInterface */
     private $formFactory;
-
-    /** @var FlashBagInterface */
-    private $flashBag;
 
     /** @var FormErrorsFlashHelperInterface */
     private $formErrorsFlashHelper;
@@ -41,7 +37,6 @@ final class ImportDataAction
     public function __construct(
         ImportProcessorInterface $importProcessor,
         FormFactoryInterface $formFactory,
-        FlashBagInterface $flashBag,
         FormErrorsFlashHelperInterface $formErrorsFlashHelper,
         TranslatorInterface $translator,
         ViewHandler $viewHandler
@@ -49,7 +44,6 @@ final class ImportDataAction
 
         $this->importProcessor = $importProcessor;
         $this->formFactory = $formFactory;
-        $this->flashBag = $flashBag;
         $this->formErrorsFlashHelper = $formErrorsFlashHelper;
         $this->translator = $translator;
         $this->viewHandler = $viewHandler;
@@ -63,7 +57,6 @@ final class ImportDataAction
         $form->handleRequest($request);
 
         if ($request->isMethod('POST') && $form->isSubmitted()) {
-
             if ($form->isValid()) {
                 /** @var UploadedFile $file */
                 $file = $form->get('file')->getData();
@@ -72,9 +65,9 @@ final class ImportDataAction
                 try {
                     $this->importProcessor->process($resourceName, $file->getPathname());
 
-                    $this->flashBag->set('success', $this->translator->trans('lwc_cms.ui.successfully_imported'));
+                    $request->getSession()->getFlashBag()->set('success', $this->translator->trans('lwc_cms.ui.successfully_imported'));
                 } catch (ImportFailedException $exception) {
-                    $this->flashBag->set('error', $exception->getMessage());
+                    $request->getSession()->getFlashBag()->set('error', $exception->getMessage());
                 }
             } else {
                 $this->formErrorsFlashHelper->addFlashErrors($form);

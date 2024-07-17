@@ -5,20 +5,21 @@ declare(strict_types=1);
 namespace Lwc\CmsBundle\Controller\Helper;
 
 use Symfony\Component\Form\FormInterface;
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class FormErrorsFlashHelper implements FormErrorsFlashHelperInterface
 {
-    /** @var FlashBagInterface */
-    private $flashBag;
+    /** @var Request */
+    private $request;
 
     /** @var TranslatorInterface */
     private $translator;
 
-    public function __construct(FlashBagInterface $flashBag, TranslatorInterface $translator)
+    public function __construct(RequestStack $requestStack, TranslatorInterface $translator)
     {
-        $this->flashBag = $flashBag;
+        $this->request = $requestStack->getCurrentRequest();
         $this->translator = $translator;
     }
 
@@ -36,6 +37,8 @@ final class FormErrorsFlashHelper implements FormErrorsFlashHelperInterface
 
         $message = $this->translator->trans('lwc_cms.ui.form_was_submitted_with_errors') . ' ' . rtrim(implode($errors, " "));
 
-        $this->flashBag->set('error', $message);
+        if ($this->request) {
+            $this->request->getSession()->getFlashBag()->set('error', $message);
+        }
     }
 }

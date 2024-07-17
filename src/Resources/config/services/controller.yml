@@ -11,7 +11,6 @@ services:
         arguments:
             - "@lwc_cms.processor.import"
             - "@form.factory"
-            - "@session.flash_bag"
             - "@lwc_cms.controller.helper.form_errors_flash"
             - "@translator"
             - "@fos_rest.view_handler.default"
@@ -28,5 +27,5 @@ services:
         class: Lwc\CmsBundle\Controller\Helper\FormErrorsFlashHelper
         public: true
         arguments:
-            - "@session.flash_bag"
+            - "@request_stack"
             - "@translator"

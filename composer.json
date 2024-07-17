@@ -7,7 +7,7 @@
     "description": "CMS plugin for Sylius resource applications.",
     "license": "MIT",
     "require": {
-       "php": "~7.3|~8.0",
+       "php": "~7.4|~8.0",
         "league/csv": "^9.1",
         "friendsofsymfony/ckeditor-bundle": "^1.1|^2.0|^3.0",
         "sylius/resource-bundle": "^1.4",
